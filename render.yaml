@@ -5,14 +5,41 @@ services:
     buildCommand: |
       pip install -r requirements.txt
       mkdir -p data-docs
-      if [ -d "data-docs" ] && [ "$(ls -A data-docs)" ]; then
-        echo "Data files found in data-docs directory"
-        ls -la data-docs/
+      echo "Setting up data files for deployment..."
+      # Copy existing data files if they exist
+      if [ -f "data-docs/data.json" ]; then
+        echo "Found existing data.json"
       else
-        echo "No data files found. Creating sample data files..."
-        echo '{"employees": [{"id": 1, "name": "John Doe", "department": "IT"}]}' > data-docs/sample.json
-        echo "Sample data file created"
+        echo "Creating sample data.json..."
+        cat > data-docs/data.json << 'EOF'
+        {
+          "employees": [
+            {"id": 1, "name": "John Doe", "department": "IT", "salary": 75000},
+            {"id": 2, "name": "Jane Smith", "department": "HR", "salary": 65000},
+            {"id": 3, "name": "Bob Johnson", "department": "Sales", "salary": 70000}
+          ],
+          "departments": [
+            {"id": 1, "name": "IT", "location": "Floor 1"},
+            {"id": 2, "name": "HR", "location": "Floor 2"},
+            {"id": 3, "name": "Sales", "location": "Floor 3"}
+          ]
+        }
+        EOF
       fi
+      if [ -f "data-docs/data.xlsx" ]; then
+        echo "Found existing data.xlsx"
+      else
+        echo "Creating sample data.xlsx..."
+        # Create a simple CSV as fallback
+        cat > data-docs/data.csv << 'EOF'
+        id,name,department,salary
+        1,John Doe,IT,75000
+        2,Jane Smith,HR,65000
+        3,Bob Johnson,Sales,70000
+        EOF
+      fi
+      echo "Data files ready:"
+      ls -la data-docs/
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: DATA_DIR

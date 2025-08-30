@@ -1,0 +1,702 @@
+[
+  {
+    "id": 1,
+    "name": "Item 1",
+    "category": "Category 2",
+    "value": 87.02,
+    "created_at": "2025-08-29T11:40:03.685664"
+  },
+  {
+    "id": 2,
+    "name": "Item 2",
+    "category": "Category 3",
+    "value": 23.83,
+    "created_at": "2025-08-29T10:40:03.685671"
+  },
+  {
+    "id": 3,
+    "name": "Item 3",
+    "category": "Category 4",
+    "value": 3.01,
+    "created_at": "2025-08-29T09:40:03.685675"
+  },
+  {
+    "id": 4,
+    "name": "Item 4",
+    "category": "Category 1",
+    "value": 88.88,
+    "created_at": "2025-08-29T08:40:03.685679"
+  },
+  {
+    "id": 5,
+    "name": "Item 5",
+    "category": "Category 2",
+    "value": 25.29,
+    "created_at": "2025-08-29T07:40:03.685682"
+  },
+  {
+    "id": 6,
+    "name": "Item 6",
+    "category": "Category 3",
+    "value": 53.47,
+    "created_at": "2025-08-29T06:40:03.685686"
+  },
+  {
+    "id": 7,
+    "name": "Item 7",
+    "category": "Category 4",
+    "value": 44.13,
+    "created_at": "2025-08-29T05:40:03.685689"
+  },
+  {
+    "id": 8,
+    "name": "Item 8",
+    "category": "Category 1",
+    "value": 9.4,
+    "created_at": "2025-08-29T04:40:03.685693"
+  },
+  {
+    "id": 9,
+    "name": "Item 9",
+    "category": "Category 2",
+    "value": 7.54,
+    "created_at": "2025-08-29T03:40:03.685696"
+  },
+  {
+    "id": 10,
+    "name": "Item 10",
+    "category": "Category 3",
+    "value": 60.31,
+    "created_at": "2025-08-29T02:40:03.685699"
+  },
+  {
+    "id": 11,
+    "name": "Item 11",
+    "category": "Category 4",
+    "value": 29.68,
+    "created_at": "2025-08-29T01:40:03.685702"
+  },
+  {
+    "id": 12,
+    "name": "Item 12",
+    "category": "Category 1",
+    "value": 73.91,
+    "created_at": "2025-08-29T00:40:03.685705"
+  },
+  {
+    "id": 13,
+    "name": "Item 13",
+    "category": "Category 2",
+    "value": 80.45,
+    "created_at": "2025-08-28T23:40:03.685709"
+  },
+  {
+    "id": 14,
+    "name": "Item 14",
+    "category": "Category 3",
+    "value": 40.98,
+    "created_at": "2025-08-28T22:40:03.685712"
+  },
+  {
+    "id": 15,
+    "name": "Item 15",
+    "category": "Category 4",
+    "value": 48.87,
+    "created_at": "2025-08-28T21:40:03.685715"
+  },
+  {
+    "id": 16,
+    "name": "Item 16",
+    "category": "Category 1",
+    "value": 75.04,
+    "created_at": "2025-08-28T20:40:03.685718"
+  },
+  {
+    "id": 17,
+    "name": "Item 17",
+    "category": "Category 2",
+    "value": 44.06,
+    "created_at": "2025-08-28T19:40:03.685721"
+  },
+  {
+    "id": 18,
+    "name": "Item 18",
+    "category": "Category 3",
+    "value": 52.32,
+    "created_at": "2025-08-28T18:40:03.685725"
+  },
+  {
+    "id": 19,
+    "name": "Item 19",
+    "category": "Category 4",
+    "value": 85.39,
+    "created_at": "2025-08-28T17:40:03.685728"
+  },
+  {
+    "id": 20,
+    "name": "Item 20",
+    "category": "Category 1",
+    "value": 37.72,
+    "created_at": "2025-08-28T16:40:03.685731"
+  },
+  {
+    "id": 21,
+    "name": "Item 21",
+    "category": "Category 2",
+    "value": 25.49,
+    "created_at": "2025-08-28T15:40:03.685734"
+  },
+  {
+    "id": 22,
+    "name": "Item 22",
+    "category": "Category 3",
+    "value": 20.21,
+    "created_at": "2025-08-28T14:40:03.685737"
+  },
+  {
+    "id": 23,
+    "name": "Item 23",
+    "category": "Category 4",
+    "value": 75.11,
+    "created_at": "2025-08-28T13:40:03.685740"
+  },
+  {
+    "id": 24,
+    "name": "Item 24",
+    "category": "Category 1",
+    "value": 70.05,
+    "created_at": "2025-08-28T12:40:03.685743"
+  },
+  {
+    "id": 25,
+    "name": "Item 25",
+    "category": "Category 2",
+    "value": 46.88,
+    "created_at": "2025-08-28T11:40:03.685746"
+  },
+  {
+    "id": 26,
+    "name": "Item 26",
+    "category": "Category 3",
+    "value": 23.16,
+    "created_at": "2025-08-28T10:40:03.685750"
+  },
+  {
+    "id": 27,
+    "name": "Item 27",
+    "category": "Category 4",
+    "value": 98.11,
+    "created_at": "2025-08-28T09:40:03.685753"
+  },
+  {
+    "id": 28,
+    "name": "Item 28",
+    "category": "Category 1",
+    "value": 17.14,
+    "created_at": "2025-08-28T08:40:03.685756"
+  },
+  {
+    "id": 29,
+    "name": "Item 29",
+    "category": "Category 2",
+    "value": 3.04,
+    "created_at": "2025-08-28T07:40:03.685759"
+  },
+  {
+    "id": 30,
+    "name": "Item 30",
+    "category": "Category 3",
+    "value": 33.03,
+    "created_at": "2025-08-28T06:40:03.685762"
+  },
+  {
+    "id": 31,
+    "name": "Item 31",
+    "category": "Category 4",
+    "value": 58.97,
+    "created_at": "2025-08-28T05:40:03.685765"
+  },
+  {
+    "id": 32,
+    "name": "Item 32",
+    "category": "Category 1",
+    "value": 49.88,
+    "created_at": "2025-08-28T04:40:03.685768"
+  },
+  {
+    "id": 33,
+    "name": "Item 33",
+    "category": "Category 2",
+    "value": 33.12,
+    "created_at": "2025-08-28T03:40:03.685772"
+  },
+  {
+    "id": 34,
+    "name": "Item 34",
+    "category": "Category 3",
+    "value": 80.65,
+    "created_at": "2025-08-28T02:40:03.685775"
+  },
+  {
+    "id": 35,
+    "name": "Item 35",
+    "category": "Category 4",
+    "value": 93.73,
+    "created_at": "2025-08-28T01:40:03.685778"
+  },
+  {
+    "id": 36,
+    "name": "Item 36",
+    "category": "Category 1",
+    "value": 23.55,
+    "created_at": "2025-08-28T00:40:03.685781"
+  },
+  {
+    "id": 37,
+    "name": "Item 37",
+    "category": "Category 2",
+    "value": 48.1,
+    "created_at": "2025-08-27T23:40:03.685784"
+  },
+  {
+    "id": 38,
+    "name": "Item 38",
+    "category": "Category 3",
+    "value": 85.9,
+    "created_at": "2025-08-27T22:40:03.685787"
+  },
+  {
+    "id": 39,
+    "name": "Item 39",
+    "category": "Category 4",
+    "value": 29.36,
+    "created_at": "2025-08-27T21:40:03.685790"
+  },
+  {
+    "id": 40,
+    "name": "Item 40",
+    "category": "Category 1",
+    "value": 38.97,
+    "created_at": "2025-08-27T20:40:03.685793"
+  },
+  {
+    "id": 41,
+    "name": "Item 41",
+    "category": "Category 2",
+    "value": 89.91,
+    "created_at": "2025-08-27T19:40:03.685796"
+  },
+  {
+    "id": 42,
+    "name": "Item 42",
+    "category": "Category 3",
+    "value": 49.13,
+    "created_at": "2025-08-27T18:40:03.685799"
+  },
+  {
+    "id": 43,
+    "name": "Item 43",
+    "category": "Category 4",
+    "value": 80.32,
+    "created_at": "2025-08-27T17:40:03.685802"
+  },
+  {
+    "id": 44,
+    "name": "Item 44",
+    "category": "Category 1",
+    "value": 19.19,
+    "created_at": "2025-08-27T16:40:03.685805"
+  },
+  {
+    "id": 45,
+    "name": "Item 45",
+    "category": "Category 2",
+    "value": 40.23,
+    "created_at": "2025-08-27T15:40:03.685808"
+  },
+  {
+    "id": 46,
+    "name": "Item 46",
+    "category": "Category 3",
+    "value": 91.39,
+    "created_at": "2025-08-27T14:40:03.685811"
+  },
+  {
+    "id": 47,
+    "name": "Item 47",
+    "category": "Category 4",
+    "value": 7.2,
+    "created_at": "2025-08-27T13:40:03.685814"
+  },
+  {
+    "id": 48,
+    "name": "Item 48",
+    "category": "Category 1",
+    "value": 85.46,
+    "created_at": "2025-08-27T12:40:03.685817"
+  },
+  {
+    "id": 49,
+    "name": "Item 49",
+    "category": "Category 2",
+    "value": 5.24,
+    "created_at": "2025-08-27T11:40:03.685820"
+  },
+  {
+    "id": 50,
+    "name": "Item 50",
+    "category": "Category 3",
+    "value": 60.24,
+    "created_at": "2025-08-27T10:40:03.685823"
+  },
+  {
+    "id": 51,
+    "name": "Item 51",
+    "category": "Category 4",
+    "value": 55.31,
+    "created_at": "2025-08-27T09:40:03.685826"
+  },
+  {
+    "id": 52,
+    "name": "Item 52",
+    "category": "Category 1",
+    "value": 87.76,
+    "created_at": "2025-08-27T08:40:03.685829"
+  },
+  {
+    "id": 53,
+    "name": "Item 53",
+    "category": "Category 2",
+    "value": 16.21,
+    "created_at": "2025-08-27T07:40:03.685832"
+  },
+  {
+    "id": 54,
+    "name": "Item 54",
+    "category": "Category 3",
+    "value": 20.52,
+    "created_at": "2025-08-27T06:40:03.685837"
+  },
+  {
+    "id": 55,
+    "name": "Item 55",
+    "category": "Category 4",
+    "value": 96.16,
+    "created_at": "2025-08-27T05:40:03.685840"
+  },
+  {
+    "id": 56,
+    "name": "Item 56",
+    "category": "Category 1",
+    "value": 6.85,
+    "created_at": "2025-08-27T04:40:03.685843"
+  },
+  {
+    "id": 57,
+    "name": "Item 57",
+    "category": "Category 2",
+    "value": 7.15,
+    "created_at": "2025-08-27T03:40:03.685846"
+  },
+  {
+    "id": 58,
+    "name": "Item 58",
+    "category": "Category 3",
+    "value": 81.45,
+    "created_at": "2025-08-27T02:40:03.685849"
+  },
+  {
+    "id": 59,
+    "name": "Item 59",
+    "category": "Category 4",
+    "value": 87.5,
+    "created_at": "2025-08-27T01:40:03.685852"
+  },
+  {
+    "id": 60,
+    "name": "Item 60",
+    "category": "Category 1",
+    "value": 49.2,
+    "created_at": "2025-08-27T00:40:03.685855"
+  },
+  {
+    "id": 61,
+    "name": "Item 61",
+    "category": "Category 2",
+    "value": 4.21,
+    "created_at": "2025-08-26T23:40:03.685858"
+  },
+  {
+    "id": 62,
+    "name": "Item 62",
+    "category": "Category 3",
+    "value": 21.07,
+    "created_at": "2025-08-26T22:40:03.685861"
+  },
+  {
+    "id": 63,
+    "name": "Item 63",
+    "category": "Category 4",
+    "value": 29.28,
+    "created_at": "2025-08-26T21:40:03.685865"
+  },
+  {
+    "id": 64,
+    "name": "Item 64",
+    "category": "Category 1",
+    "value": 55.14,
+    "created_at": "2025-08-26T20:40:03.685868"
+  },
+  {
+    "id": 65,
+    "name": "Item 65",
+    "category": "Category 2",
+    "value": 29.22,
+    "created_at": "2025-08-26T19:40:03.685871"
+  },
+  {
+    "id": 66,
+    "name": "Item 66",
+    "category": "Category 3",
+    "value": 89.77,
+    "created_at": "2025-08-26T18:40:03.685874"
+  },
+  {
+    "id": 67,
+    "name": "Item 67",
+    "category": "Category 4",
+    "value": 14.75,
+    "created_at": "2025-08-26T17:40:03.685877"
+  },
+  {
+    "id": 68,
+    "name": "Item 68",
+    "category": "Category 1",
+    "value": 35.97,
+    "created_at": "2025-08-26T16:40:03.685880"
+  },
+  {
+    "id": 69,
+    "name": "Item 69",
+    "category": "Category 2",
+    "value": 43.62,
+    "created_at": "2025-08-26T15:40:03.685883"
+  },
+  {
+    "id": 70,
+    "name": "Item 70",
+    "category": "Category 3",
+    "value": 38.44,
+    "created_at": "2025-08-26T14:40:03.685886"
+  },
+  {
+    "id": 71,
+    "name": "Item 71",
+    "category": "Category 4",
+    "value": 87.26,
+    "created_at": "2025-08-26T13:40:03.685889"
+  },
+  {
+    "id": 72,
+    "name": "Item 72",
+    "category": "Category 1",
+    "value": 78.64,
+    "created_at": "2025-08-26T12:40:03.685892"
+  },
+  {
+    "id": 73,
+    "name": "Item 73",
+    "category": "Category 2",
+    "value": 91.62,
+    "created_at": "2025-08-26T11:40:03.685895"
+  },
+  {
+    "id": 74,
+    "name": "Item 74",
+    "category": "Category 3",
+    "value": 30.55,
+    "created_at": "2025-08-26T10:40:03.685899"
+  },
+  {
+    "id": 75,
+    "name": "Item 75",
+    "category": "Category 4",
+    "value": 73.28,
+    "created_at": "2025-08-26T09:40:03.685901"
+  },
+  {
+    "id": 76,
+    "name": "Item 76",
+    "category": "Category 1",
+    "value": 4.09,
+    "created_at": "2025-08-26T08:40:03.685904"
+  },
+  {
+    "id": 77,
+    "name": "Item 77",
+    "category": "Category 2",
+    "value": 97.26,
+    "created_at": "2025-08-26T07:40:03.685908"
+  },
+  {
+    "id": 78,
+    "name": "Item 78",
+    "category": "Category 3",
+    "value": 31.16,
+    "created_at": "2025-08-26T06:40:03.685911"
+  },
+  {
+    "id": 79,
+    "name": "Item 79",
+    "category": "Category 4",
+    "value": 16.53,
+    "created_at": "2025-08-26T05:40:03.685914"
+  },
+  {
+    "id": 80,
+    "name": "Item 80",
+    "category": "Category 1",
+    "value": 25.82,
+    "created_at": "2025-08-26T04:40:03.685917"
+  },
+  {
+    "id": 81,
+    "name": "Item 81",
+    "category": "Category 2",
+    "value": 68.25,
+    "created_at": "2025-08-26T03:40:03.685920"
+  },
+  {
+    "id": 82,
+    "name": "Item 82",
+    "category": "Category 3",
+    "value": 74.19,
+    "created_at": "2025-08-26T02:40:03.685924"
+  },
+  {
+    "id": 83,
+    "name": "Item 83",
+    "category": "Category 4",
+    "value": 13.01,
+    "created_at": "2025-08-26T01:40:03.685927"
+  },
+  {
+    "id": 84,
+    "name": "Item 84",
+    "category": "Category 1",
+    "value": 77.35,
+    "created_at": "2025-08-26T00:40:03.685930"
+  },
+  {
+    "id": 85,
+    "name": "Item 85",
+    "category": "Category 2",
+    "value": 61.49,
+    "created_at": "2025-08-25T23:40:03.685933"
+  },
+  {
+    "id": 86,
+    "name": "Item 86",
+    "category": "Category 3",
+    "value": 41.27,
+    "created_at": "2025-08-25T22:40:03.685936"
+  },
+  {
+    "id": 87,
+    "name": "Item 87",
+    "category": "Category 4",
+    "value": 5.71,
+    "created_at": "2025-08-25T21:40:03.685939"
+  },
+  {
+    "id": 88,
+    "name": "Item 88",
+    "category": "Category 1",
+    "value": 46.78,
+    "created_at": "2025-08-25T20:40:03.685942"
+  },
+  {
+    "id": 89,
+    "name": "Item 89",
+    "category": "Category 2",
+    "value": 90.41,
+    "created_at": "2025-08-25T19:40:03.685945"
+  },
+  {
+    "id": 90,
+    "name": "Item 90",
+    "category": "Category 3",
+    "value": 97.77,
+    "created_at": "2025-08-25T18:40:03.685948"
+  },
+  {
+    "id": 91,
+    "name": "Item 91",
+    "category": "Category 4",
+    "value": 83.22,
+    "created_at": "2025-08-25T17:40:03.685951"
+  },
+  {
+    "id": 92,
+    "name": "Item 92",
+    "category": "Category 1",
+    "value": 41.99,
+    "created_at": "2025-08-25T16:40:03.685954"
+  },
+  {
+    "id": 93,
+    "name": "Item 93",
+    "category": "Category 2",
+    "value": 83.22,
+    "created_at": "2025-08-25T15:40:03.685957"
+  },
+  {
+    "id": 94,
+    "name": "Item 94",
+    "category": "Category 3",
+    "value": 55.79,
+    "created_at": "2025-08-25T14:40:03.685960"
+  },
+  {
+    "id": 95,
+    "name": "Item 95",
+    "category": "Category 4",
+    "value": 64.36,
+    "created_at": "2025-08-25T13:40:03.685963"
+  },
+  {
+    "id": 96,
+    "name": "Item 96",
+    "category": "Category 1",
+    "value": 14.32,
+    "created_at": "2025-08-25T12:40:03.685966"
+  },
+  {
+    "id": 97,
+    "name": "Item 97",
+    "category": "Category 2",
+    "value": 7.2,
+    "created_at": "2025-08-25T11:40:03.685969"
+  },
+  {
+    "id": 98,
+    "name": "Item 98",
+    "category": "Category 3",
+    "value": 32.22,
+    "created_at": "2025-08-25T10:40:03.685972"
+  },
+  {
+    "id": 99,
+    "name": "Item 99",
+    "category": "Category 4",
+    "value": 24.68,
+    "created_at": "2025-08-25T09:40:03.685975"
+  },
+  {
+    "id": 100,
+    "name": "Item 100",
+    "category": "Category 1",
+    "value": 26.64,
+    "created_at": "2025-08-25T08:40:03.685978"
+  }
+]
