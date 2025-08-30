@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: retail-data-service-docker
+    env: docker
+    dockerfilePath: ./Dockerfile.render
+    envVars:
+      - key: DATA_DIR
+        value: /app/data-docs
+      - key: ENABLE_CORS
+        value: true
+      - key: WATCH_FILE
+        value: false
+    healthCheckPath: /health
+    autoDeploy: true
+    branch: main 
