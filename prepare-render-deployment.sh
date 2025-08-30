@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "🚀 Render.com Deployment Preparation"
-echo "===================================="
+echo "🚀 Preparing Render Deployment"
+echo "=============================="
 
 # Colors for output
 GREEN='\033[0;32m'
@@ -26,41 +26,14 @@ print_error() {
     echo -e "${RED}[ERROR]${NC} $1"
 }
 
-# Check if git is installed
-if ! command -v git &> /dev/null; then
-    print_error "Git is not installed. Please install Git first."
-    exit 1
-fi
-
-# Check if we're in a git repository
-if [ ! -d ".git" ]; then
-    print_error "Not in a git repository. Please initialize git first:"
-    echo "  git init"
-    echo "  git remote add origin <your-gitlab-repo-url>"
-    exit 1
-fi
-
-# Check if render.yaml exists
-if [ ! -f "render.yaml" ]; then
-    print_error "render.yaml not found. Please ensure it exists in the project root."
-    exit 1
-fi
-
-# Check if requirements.txt exists
-if [ ! -f "requirements.txt" ]; then
-    print_error "requirements.txt not found. Please ensure it exists in the project root."
-    exit 1
-fi
-
 # Check if data-docs directory exists
 if [ ! -d "data-docs" ]; then
-    print_warning "data-docs directory not found. Creating it..."
+    print_status "Creating data-docs directory..."
     mkdir -p data-docs
-    print_success "Created data-docs directory"
 fi
 
-# Check if data files exist
-if [ ! -f "data-docs/data.json" ] && [ ! -f "data-docs/data.xlsx" ] && [ ! -f "data-docs/mock_data.xlsx" ]; then
+# Check if there are any data files
+if [ -z "$(ls -A data-docs 2>/dev/null)" ]; then
     print_warning "No data files found in data-docs/ directory"
     echo "Creating sample data files for deployment..."
     
@@ -88,10 +61,23 @@ id,name,department,salary
 3,Bob Johnson,Sales,70000
 EOF
     
-    print_success "Sample data files created for deployment"
+    print_success "Sample data files created:"
+    echo "  - data-docs/sample.json"
+    echo "  - data-docs/sample.csv"
+else
+    print_success "Data files found in data-docs/ directory:"
+    ls -la data-docs/
 fi
 
-# Test build locally
+# Ensure data files are tracked by git
+print_status "Checking git status for data files..."
+if [ -n "$(git status --porcelain data-docs/ 2>/dev/null)" ]; then
+    print_warning "Data files have changes. Adding to git..."
+    git add data-docs/
+    git commit -m "Add data files for Render deployment" 2>/dev/null || echo "No changes to commit"
+fi
+
+# Test the build locally
 print_status "Testing build locally..."
 chmod +x build.sh
 ./build.sh
@@ -103,30 +89,16 @@ fi
 
 print_success "Build test passed!"
 
-# Check git status
-print_status "Checking git status..."
-if [ -n "$(git status --porcelain)" ]; then
-    print_warning "You have uncommitted changes. Please commit them before deploying:"
-    git status --short
-    echo ""
-    echo "To commit changes:"
-    echo "  git add ."
-    echo "  git commit -m 'Prepare for Render deployment'"
-    echo "  git push origin main"
-else
-    print_success "No uncommitted changes"
-fi
-
 # Show deployment instructions
 echo ""
-print_success "Your application is ready for Render deployment! 🎉"
+print_success "Your repository is ready for Render deployment! 🎉"
 echo ""
-echo "📋 Deployment Steps:"
-echo "==================="
+echo "📋 Next Steps:"
+echo "=============="
 echo ""
 echo "1. 📤 Push your code to GitLab:"
 echo "   git add ."
-echo "   git commit -m 'Add Render deployment configuration'"
+echo "   git commit -m 'Prepare for Render deployment'"
 echo "   git push origin main"
 echo ""
 echo "2. 🌐 Deploy to Render:"
@@ -137,7 +109,7 @@ echo "   - Select your repository: retail-data-service"
 echo "   - Configure the service:"
 echo "     • Name: retail-data-service"
 echo "     • Environment: Python"
-echo "     • Build Command: pip install -r requirements.txt"
+echo "     • Build Command: (already configured in render.yaml)"
 echo "     • Start Command: uvicorn app.main:app --host 0.0.0.0 --port \$PORT"
 echo ""
 echo "3. ⚙️  Environment Variables:"
@@ -153,18 +125,6 @@ echo ""
 echo "5. 🧪 Test your deployment:"
 echo "   curl https://retail-data-service.onrender.com/health"
 echo "   curl https://retail-data-service.onrender.com/datasets"
-echo "   curl \"https://retail-data-service.onrender.com/data?name=data_employees&limit=5\""
-echo ""
-echo "📚 Documentation:"
-echo "================="
-echo "• Render Documentation: https://render.com/docs"
-echo "• Render Community: https://community.render.com/"
-echo "• Render Status: https://status.render.com/"
-echo ""
-echo "💰 Pricing:"
-echo "==========="
-echo "• Free Tier: $7/month credit (auto-sleep after 15 min inactivity)"
-echo "• Starter: $7/month (always on)"
-echo "• Standard: $25/month (better performance)"
+echo "   curl \"https://retail-data-service.onrender.com/data?name=sample_employees&limit=5\""
 echo ""
 print_success "Happy deploying! 🚀" 

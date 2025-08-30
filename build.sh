@@ -31,11 +31,36 @@ mkdir -p data-docs
 # Check if data files exist
 if [ ! -f "data-docs/data.json" ] && [ ! -f "data-docs/data.xlsx" ] && [ ! -f "data-docs/mock_data.xlsx" ]; then
     print_warning "No data files found in data-docs/ directory"
-    echo "Please add your data files to the data-docs/ directory:"
-    echo "  - data.json"
-    echo "  - data.xlsx" 
-    echo "  - mock_data.xlsx"
-    echo "  - or any other supported files (.csv, .xls)"
+    echo "Creating sample data files for deployment..."
+    
+    # Create sample JSON data
+    cat > data-docs/sample.json << 'EOF'
+{
+  "employees": [
+    {"id": 1, "name": "John Doe", "department": "IT", "salary": 75000},
+    {"id": 2, "name": "Jane Smith", "department": "HR", "salary": 65000},
+    {"id": 3, "name": "Bob Johnson", "department": "Sales", "salary": 70000}
+  ],
+  "departments": [
+    {"id": 1, "name": "IT", "location": "Floor 1"},
+    {"id": 2, "name": "HR", "location": "Floor 2"},
+    {"id": 3, "name": "Sales", "location": "Floor 3"}
+  ]
+}
+EOF
+    
+    # Create sample CSV data
+    cat > data-docs/sample.csv << 'EOF'
+id,name,department,salary
+1,John Doe,IT,75000
+2,Jane Smith,HR,65000
+3,Bob Johnson,Sales,70000
+EOF
+    
+    print_success "Sample data files created:"
+    echo "  - data-docs/sample.json"
+    echo "  - data-docs/sample.csv"
+    ls -la data-docs/
 else
     print_success "Data files found in data-docs/ directory"
     ls -la data-docs/
