@@ -45,9 +45,8 @@ You should see logs like:
 ```
 #11 [6/7] COPY app/ ./app/
 #12 [7/7] RUN mkdir -p /app/data-docs
-#13 [8/8] RUN echo '{...}' > /app/data-docs/data.json
-#14 [9/9] RUN echo 'id,name,department...' > /app/data-docs/data.csv
-#15 [10/10] RUN ls -la /app/data-docs/ && echo "Data files created successfully"
+#13 [8/8] COPY data-docs/mock_data.xlsx /app/data-docs/
+#14 [9/9] RUN ls -la /app/data-docs/ && echo "Data files created successfully"
 ```
 
 **Runtime Logs:**
@@ -57,7 +56,7 @@ Current working directory: /app
 DATA_DIR environment variable: /app/data-docs
 Data directory exists: True
 All files in /app/data-docs: [list of files]
-Supported files found: 4
+Supported files found: 1
 ✅ Application startup successful
 ```
 
@@ -73,19 +72,19 @@ Expected response: `{"status": "healthy"}`
 ```bash
 curl https://your-service.onrender.com/datasets
 ```
-Expected response: JSON with 4 datasets (data_employees, data_departments, data_products, data_employees)
+Expected response: JSON with 11 datasets from mock_data.xlsx (mock_data_Use_Cases, mock_data_Real_time_inv, mock_data_Real_time_Sales, etc.)
 
 ### 3. Get Data
 ```bash
-curl "https://your-service.onrender.com/data?name=data_employees&limit=5"
+curl "https://your-service.onrender.com/data?name=mock_data_Use_Cases&limit=5"
 ```
-Expected response: JSON with employee data
+Expected response: JSON with data from mock_data.xlsx
 
 ### 4. Get CSV Data
 ```bash
-curl "https://your-service.onrender.com/data?name=data_employees&format=csv&limit=3"
+curl "https://your-service.onrender.com/data?name=mock_data_Use_Cases&format=csv&limit=3"
 ```
-Expected response: CSV formatted data
+Expected response: CSV formatted data from mock_data.xlsx
 
 ## Troubleshooting
 
@@ -136,9 +135,7 @@ retail-data-service/
 │   ├── config.py
 │   └── models.py
 ├── data-docs/
-│   ├── mock_data.xlsx
-│   ├── data.json
-│   └── data.csv
+│   └── mock_data.xlsx
 ├── Dockerfile
 ├── requirements.txt
 └── README.md
