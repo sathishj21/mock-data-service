@@ -11,15 +11,15 @@ services:
       echo "Repository contents:"
       ls -la
       
-      # Ensure data-docs directory exists in the correct location
-      mkdir -p data-docs
-      echo "Created data-docs directory at: $(pwd)/data-docs"
+      # Create data-docs directory in the correct location for runtime
+      mkdir -p /app/data-docs
+      echo "Created data-docs directory at: /app/data-docs"
       
-      # ALWAYS create data files (don't check for existing ones)
+      # ALWAYS create data files in the runtime location
       echo "Creating data files for deployment..."
       
-      # Create comprehensive sample data files
-      cat > data-docs/data.json << 'EOF'
+      # Create comprehensive sample data files in /app/data-docs
+      cat > /app/data-docs/data.json << 'EOF'
       {
         "employees": [
           {"id": 1, "name": "John Doe", "department": "IT", "salary": 75000, "email": "john.doe@company.com"},
@@ -43,7 +43,7 @@ services:
       }
       EOF
       
-      cat > data-docs/data.csv << 'EOF'
+      cat > /app/data-docs/data.csv << 'EOF'
       id,name,department,salary,email
       1,John Doe,IT,75000,john.doe@company.com
       2,Jane Smith,HR,65000,jane.smith@company.com
@@ -52,7 +52,7 @@ services:
       5,Charlie Wilson,IT,72000,charlie.wilson@company.com
       EOF
       
-      cat > data-docs/products.csv << 'EOF'
+      cat > /app/data-docs/products.csv << 'EOF'
       id,name,category,price,stock
       1,Laptop,Electronics,999.99,50
       2,Mouse,Electronics,29.99,100
@@ -61,7 +61,7 @@ services:
       5,Headphones,Electronics,149.99,30
       EOF
       
-      cat > data-docs/sample_data.csv << 'EOF'
+      cat > /app/data-docs/sample_data.csv << 'EOF'
       id,name,department,salary,email
       1,John Doe,IT,75000,john.doe@company.com
       2,Jane Smith,HR,65000,jane.smith@company.com
@@ -70,24 +70,24 @@ services:
       5,Charlie Wilson,IT,72000,charlie.wilson@company.com
       EOF
       
-      echo "✅ Sample data files created"
+      echo "✅ Sample data files created in /app/data-docs"
       
       # List all data files
-      echo "📁 Data files in data-docs directory:"
-      ls -la data-docs/
+      echo "📁 Data files in /app/data-docs directory:"
+      ls -la /app/data-docs/
       echo ""
       echo "📊 File sizes:"
-      du -h data-docs/*
+      du -h /app/data-docs/*
       echo ""
       echo "🔍 Absolute path of data-docs:"
-      echo "$(pwd)/data-docs"
+      echo "/app/data-docs"
       echo ""
       echo "✅ Data files ready for deployment"
     startCommand: |
       echo "Starting application..."
       echo "Current directory: $(pwd)"
-      echo "Checking data-docs directory:"
-      ls -la data-docs/ || echo "data-docs directory not found"
+      echo "Checking /app/data-docs directory:"
+      ls -la /app/data-docs/ || echo "/app/data-docs directory not found"
       echo "Starting uvicorn..."
       uvicorn app.main:app --host 0.0.0.0 --port $PORT
     envVars:
