@@ -13,7 +13,7 @@ from .config import Config
 from .loader import data_loader
 from .models import (
     DatasetsResponse, DataResponse, ErrorResponse, HealthResponse,
-    DatasetInfo, PaginatedData
+    DatasetInfo, PaginatedData, ForecastDemandRequest, ForecastDemandResponse
 )
 
 # Configure logging
@@ -190,6 +190,47 @@ async def get_data(
         raise
     except Exception as e:
         logger.error(f"Error in /data: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+
+@app.post("/forecast_demand", response_model=ForecastDemandResponse, tags=["Forecast"])
+async def forecast_demand(request: ForecastDemandRequest):
+    """Forecast demand for specified product categories."""
+    try:
+        # Get the requested categories
+        categories = [category.value for category in request.filters.product_category]
+        
+        # For now, return mock forecast data
+        # In a real implementation, this would query your data and perform forecasting
+        forecast_data = []
+        
+        for category in categories:
+            # Mock forecast data for each category
+            forecast_data.extend([
+                {
+                    "category": category,
+                    "product_id": f"PROD_{category.upper().replace(' ', '_')}_001",
+                    "forecasted_demand": 150,
+                    "confidence_level": 0.85,
+                    "forecast_date": "2024-01-15"
+                },
+                {
+                    "category": category,
+                    "product_id": f"PROD_{category.upper().replace(' ', '_')}_002", 
+                    "forecasted_demand": 200,
+                    "confidence_level": 0.92,
+                    "forecast_date": "2024-01-15"
+                }
+            ])
+        
+        return ForecastDemandResponse(
+            forecast_data=forecast_data,
+            categories=categories,
+            total_records=len(forecast_data)
+        )
+        
+    except Exception as e:
+        logger.error(f"Error in /forecast_demand: {e}")
         raise HTTPException(status_code=500, detail="Internal server error")
 
 

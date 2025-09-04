@@ -1,7 +1,42 @@
 """Pydantic models for API schemas."""
 
 from typing import Any, Dict, List, Optional, Union
+from enum import Enum
 from pydantic import BaseModel, Field, RootModel
+
+
+class ProductCategory(str, Enum):
+    """Product category enumeration with clean values (no HTML entities)."""
+    ELECTRONICS = "Electronics"
+    APPAREL = "Apparel"
+    TOYS = "Toys"
+    BEAUTY_PERSONAL_CARE = "Beauty and Personal Care"
+    GROCERY = "Grocery"
+    OFFICE_SUPPLIES = "Office Supplies"
+    HEALTH = "Health"
+    AUTOMOTIVE = "Automotive"
+    FURNITURE = "Furniture"
+    HOME_GARDEN = "Home and Garden"
+
+
+class ForecastFilters(BaseModel):
+    """Filters for forecast demand request."""
+    product_category: List[ProductCategory] = Field(
+        ..., 
+        description="List of product categories to filter by"
+    )
+
+
+class ForecastDemandRequest(BaseModel):
+    """Request model for forecast demand endpoint."""
+    filters: ForecastFilters = Field(..., description="Filters for the forecast")
+
+
+class ForecastDemandResponse(BaseModel):
+    """Response model for forecast demand endpoint."""
+    forecast_data: List[Dict[str, Any]] = Field(..., description="Forecasted demand data")
+    categories: List[str] = Field(..., description="Product categories included in forecast")
+    total_records: int = Field(..., description="Total number of forecast records")
 
 
 class DatasetInfo(BaseModel):
